@@ -4,6 +4,3 @@
 172.67.203.86:443#TD1
 172.67.180.97:443#TD2
 172.67.225.185:443#TD3
-acsg.cloudflarest.link:2052#k1
-acjp2.cloudflarest.link:2052#k2
-acsg3.cloudflarest.link:2052#k3
