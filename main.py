@@ -25,5 +25,6 @@ def w2d(dat):
 
 
 if __name__ == '__main__':
+	print("START")
 	api_url = "https://vps789.com/vps/sum/cfIpTop20"
 	w2d(getAPI(api_url))
