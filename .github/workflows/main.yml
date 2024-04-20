@@ -27,9 +27,6 @@ jobs:
           git config --local user.email "528451599@qq.com"
           git config --local user.name "AomoDa"
 
-      - name: Update MAIN Branch
-        run: |
-          git fetch main
  
       - name: Run Python Script
         run: |
