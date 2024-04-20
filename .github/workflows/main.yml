@@ -32,4 +32,8 @@ jobs:
           git config --local user.name "AomoDa"
           git add clfgoodip.csv
           git commit -m "update"
-          git push --force
+          
+      - name: Push Changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}          
