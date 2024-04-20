@@ -34,10 +34,12 @@ jobs:
           pip install requests
           python main.py
           
-      - name: GIT COMMIT
-        run: |          
+      - name: Check for Changes
+        run: |
+          git status
           git add clfgoodip.csv
-          git commit -m "update"
+          git diff --cached --exit-code || git commit -m "update"
+
           
       - name: Push Changes
         uses: ad-m/github-push-action@v0.6.0
