@@ -1,9 +1,8 @@
 name: Daily Job
 
-on:
-  push:
-    branches:
-      - master
+
+on:workflow_dispatch
+
 
 jobs:
   run_daily_job:
