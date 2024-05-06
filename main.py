@@ -18,5 +18,5 @@ def w2d(dat):
 	        file.write(ip + "\n")               
 
 if __name__ == '__main__':
-	api_url = "https://vps789.com/vps/sum/cfIpTop20"
+	api_url = "https://vps789.com/public/sum/cfIpTop20"
 	w2d(getAPI(api_url))
