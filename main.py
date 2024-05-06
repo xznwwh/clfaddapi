@@ -15,7 +15,7 @@ def w2d(dat):
 	csv_file_path = "./clfgoodip.csv"
 	with open(csv_file_path, 'w', newline='') as file:
 	    for ip in dat[:10]:
-	        file.write(ip + "\n")               
+	        file.write(str(ip).strip() + "\n")               
 
 if __name__ == '__main__':
 	api_url = "https://vps789.com/public/sum/cfIpTop20"
