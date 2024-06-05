@@ -31,7 +31,7 @@ def w2d(dat):
 		csv_file_path = "./myips.csv"
 		with open(csv_file_path, 'w', newline='') as file:
 			for ip in dat[:15]:
-			file.write(str(ip).strip() + "\n") 
+				file.write(str(ip).strip() + "\n") 
 
 
 def isselect(tag):
