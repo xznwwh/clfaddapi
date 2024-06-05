@@ -10,7 +10,7 @@ def getAPI(url):
 	idx = 1 
 	if response.status_code == 200:
 		s1 = response.content
-		s2 = b64decode(s1)
+		s2 = b64decode(s1).decode("utf-8")
 		print(s1)
 		print(s2)
 		s3 = unquote(s2)
