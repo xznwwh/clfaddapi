@@ -10,7 +10,7 @@ def getAPI(url):
 	idx = 1 
 	if response.status_code == 200:
 		s1 = response.content
-		s2 = b64decode(s2)
+		s2 = b64decode(s1)
 		s3 = unquote(s2)
 		json_data = s3.split("\n")
 		for item in json_data:
