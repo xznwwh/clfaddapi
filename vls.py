@@ -11,8 +11,6 @@ def getAPI(url):
 	if response.status_code == 200:
 		s1 = response.content
 		s2 = b64decode(s1).decode("utf-8")
-		print(s1)
-		print(s2)
 		s3 = unquote(s2)
 		json_data = s3.split("\n")
 		for item in json_data:
@@ -32,7 +30,7 @@ def w2d(dat):
 	if len(dat) > 0 :
 		csv_file_path = "./myips.csv"
 		with open(csv_file_path, 'w', newline='') as file:
-			for ip in dat[:15]:
+			for ip in dat[:30]:
 				file.write(str(ip).strip() + "\n") 
 
 
