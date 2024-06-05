@@ -9,17 +9,20 @@ def getAPI(url):
 	ips = []
 	idx = 1 
 	if response.status_code == 200:
-	    json_data = str(unquote(b64decode(response.content))).split("\n")
-	    for item in json_data:
-	    	rlt = extract_vless_info(item)
-	    	if len(rlt)>0:
-	    		server=rlt[0]
-	    		server_port=rlt[1]
-	    		if server in ips:
-	    			continue
-	    		ips.append(server)
-	    		ip_addresses.append(f"{server}:{server_port}#HKG{idx}")
-	    		idx = idx + 1  	
+		s1 = response.content
+		s2 = b64decode(s2)
+		s3 = unquote(s2)
+		json_data = s3.split("\n")
+		for item in json_data:
+			rlt = extract_vless_info(item)
+			if len(rlt)>0:
+				server=rlt[0]
+				server_port=rlt[1]
+				if server in ips:
+					continue
+				ips.append(server)
+				ip_addresses.append(f"{server}:{server_port}#HKG{idx}")
+				idx = idx + 1  	
 	return(ip_addresses)
 
 
@@ -27,8 +30,8 @@ def w2d(dat):
 	if len(dat) > 0 :
 		csv_file_path = "./myips.csv"
 		with open(csv_file_path, 'w', newline='') as file:
-		    for ip in dat[:15]:
-		        file.write(str(ip).strip() + "\n")               
+			for ip in dat[:15]:
+			file.write(str(ip).strip() + "\n") 
 
 
 def isselect(tag):
@@ -40,17 +43,18 @@ def isselect(tag):
 
 
 def extract_vless_info(vless_url):
-    pattern = re.compile(r"vless://[^@]+@([^:]+):(\d+).+#(.+)")
-    match = pattern.search(vless_url)
-    if match:
-        server_ip = match.group(1)
-        port = match.group(2)
-        name = match.group(3)
-        if isselect(name):
-        	return([server_ip, port])
-    return([])
+	pattern = re.compile(r"vless://[^@]+@([^:]+):(\d+).+#(.+)")
+	match = pattern.search(vless_url)
+	if match:
+		server_ip = match.group(1)
+		port = match.group(2)
+		name = match.group(3)
+		if isselect(name):
+			return([server_ip, port])
+	return([])
 
 
 if __name__ == '__main__':
 	api_url = "https://alvless.filegear-sg.me/CMLiu"
 	w2d(getAPI(api_url))
+
