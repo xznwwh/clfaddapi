@@ -22,8 +22,8 @@ jobs:
         
       - name: Add and Commit File
         run: |
-          git config --local user.email "528451599@qq.com"
-          git config --local user.name "AomoDa"
+          git config --local user.email "xznwwh@gmail.com"
+          git config --local user.name "xznwwh"
 
  
       - name: Run Python Script
